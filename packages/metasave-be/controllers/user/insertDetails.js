@@ -10,6 +10,8 @@ const insertDetails = async (req, res) => {
   try {
     const formData = new FormData();
     const data = req.body.data;
+    console.log(data);
+    console.log(PINATA_API_KEY);
 
     // Create pinataMetadata object
     let pinataMetadata;
@@ -43,16 +45,18 @@ const insertDetails = async (req, res) => {
       };
     }
 
+    console.log(pinataMetadata);
+
     // Convert pinataMetadata to JSON
     const pinataMetadataJSON = JSON.stringify(pinataMetadata);
-
+    console.log(pinataMetadataJSON);
     // Create the JSON file from data
     const jsonFile = new Blob([pinataMetadataJSON], { type: 'application/json' });
     formData.set('file', jsonFile);
 
     // Add pinataMetadata to FormData
     formData.set('pinataMetadata', pinataMetadataJSON);
-
+    console.log(formData);
     // Pinata options
     const pinataOptions = JSON.stringify({
       cidVersion: 0,
@@ -61,14 +65,18 @@ const insertDetails = async (req, res) => {
 
     try {
       console.log('Uploading to IPFS');
+      console.log(pinataMetadataJSON)
       const response = await axios.post(
         'https://api.pinata.cloud/pinning/pinFileToIPFS',
         formData,
         {
           maxBodyLength: 'Infinity',
           headers: {
-            'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
+            // 'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
             Authorization: `Bearer ${PINATA_API_KEY}`,
+            //'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
+            // pinata_api_key: process.env.PINATA_API_KEY,
+            // pinata_secret_api_key: process.env.PINATA_SECRET_API_KEY,
           },
         }
       );

@@ -127,7 +127,7 @@ export const MainContextProvider = ({ children }) => {
   }
 
   const insertUserDetails = async (AAProvider, CFAddress, data) => {
-    const res = await axios.post(`${serverUrl}/user`, { data })
+    const res = await axios.post(`${serverUrl}/user`, {data} )
 
     const IPFSid = res.data.CID
 
@@ -156,7 +156,7 @@ export const MainContextProvider = ({ children }) => {
   }
 
   const insertClinicDetails = async (AAProvider, CFAddress, data) => {
-    const res = await axios.post(`${serverUrl}/user`, { data })
+    const res = await axios.post(`${serverUrl}/clinic`, { data })
 
     const IPFSid = res.data.CID
 

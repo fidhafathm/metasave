@@ -36,7 +36,7 @@ const UserLogin = () => {
                 }
                 className="bg-[#383838] text-[#EFEFEF] text-center px-10 py-2 rounded-[10px] poppins hover:bg-[#2A2A2A] transition duration-300 ease-in-out w-full"
               >
-                Sign in with Google
+                Sign in 
               </button>
             ) : (
               <p className="text-center">Web3Auth is not initialized</p>

@@ -2,8 +2,6 @@
 
 A collaborative project between CUSAT and Homomorphic Software Pvt Ltd with a grant from Ethereum foundation.
 
-<<<<<<< HEAD
-=======
 ## Purpose of each module:
 
 # metasave-fe
@@ -19,7 +17,6 @@ This handles all the functionalities related to the smart contracts on the block
 # Model
 This contains the code for the YOLOv7-W6-Pose model, code for the Nano BLE Arduino script, and the python script to simulate a fall using the wearable device or the camera.
 
->>>>>>> b08c9e3204e301c000ece0b62c41b7e84b39c958
 ## Data Flow Diagram
 
 Below is the Data Flow Diagram (DFD) that outlines the flow of data across the system:
@@ -51,29 +48,6 @@ Below is the Data Flow Diagram (DFD) that outlines the flow of data across the s
 ![ROC Curve](metrics/roc.png)
 ![Confusion Matrix](metrics/confusion_matrix.png)
 
-<<<<<<< HEAD
-## Installation
-
-This project uses a monorepo structure that includes both front-end and back-end components. To get started, run the following commands:
-
-```bash
-# Install dependencies for both front-end and back-end
-npm install
-
-# Run the front-end development server
-npm run dev-fe
-
-# Run the back-end development server
-npm run dev-be
-
-# Run camera (currently on laptop)
-npm dev-camera
-
-# Run odroid
-npm dev-odroid
-```
-=======
->>>>>>> b08c9e3204e301c000ece0b62c41b7e84b39c958
 
 # Project Setup Guide
 
@@ -151,33 +125,6 @@ npm dev-odroid
 
 0 is default for the system's native camera. You can set the value inside the VideoCapture function to other numbers, which represent additional peripherically connected cameras.
 
-<<<<<<< HEAD
-### Setting Up Wearable Device (optional)
-
-The camera.py script is capable of execution even if the wearable device isn't connected. But if you would like to set it up, follow this procedure:
-
-- **Navigate to the ```packages/model/odroid.py``` script**
-- **Retrieve the MAC Address of the Wearable Device and add it to the ```ADDRESS``` field**
-- **Usually the ```SERVICE_UUID``` and the ```CHAR_UUID``` are default, but if making any changes (optional), you will have to update the same values in these fields in the ```packages/model/nano_ble.ino``` script**
-- **Push the updated script to the Arduino board**
-
-That's it, you're all set to go
-
-## Purpose of each module:
-
-# Frontend
-A client side for both user & hospital. 
-User can view their fall details/close contacts/profile/hospital/devices.
-
-# Backend
-This handles all the functionalities like authentication/fall data/whatsapp messages to close contacts/user data/communicating with blockchain & IPFS/etc.
-
-# Camera
-This is the code that's supposed to run inside the camera. It detects a fall and sends the details to the backend.
-
-# Odroid
-This regularly listens for data from the wearable device. If it detects a fall, it also sends the details to the backend.
-=======
 ### Setting Up Wearable Device & Simulating a Fall
 
 The camera.py script is capable of execution even if the wearable device isn't connected. But if you would like to set it up, follow this procedure:
@@ -230,4 +177,3 @@ npm run dev-fe
 # Run the back-end development server
 npm run dev-be
 ```
->>>>>>> b08c9e3204e301c000ece0b62c41b7e84b39c958
