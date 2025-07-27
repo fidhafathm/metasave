@@ -255,9 +255,30 @@ const Personal = () => {
         <i className="cursor-pointer fa-solid fa-plus text-3xl"></i>
       </div>
       <div className="my-20">
-        {userDetails && userDetails.contacts && userDetails.contacts.map((contact, index) => (
+        {/* {userDetails && userDetails.contacts && userDetails.contacts.map((contact, index) => (
           <Contact key={index} contact={contact} />
-        ))}
+        ))} */
+        userDetails && userDetails.contacts && (
+    // First, parse the JSON string back into a JavaScript array.
+    // Use a try/catch block to handle cases where the data might be invalid.
+    (() => {
+      try {
+        const contactsArray = JSON.parse(userDetails.contacts);
+        // Then, ensure it is an array before mapping over it.
+        if (Array.isArray(contactsArray)) {
+          return contactsArray.map((contact, index) => (
+            <Contact key={index} contact={contact} />
+          ));
+        }
+      } catch (e) {
+        console.error("Failed to parse contacts JSON string:", e);
+        // Handle the error gracefully, perhaps by returning null or an error message component.
+        return null;
+      }
+      return null;
+    })()
+  )
+        }
         
       </div>
     </div>
