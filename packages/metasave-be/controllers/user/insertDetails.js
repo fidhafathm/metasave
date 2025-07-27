@@ -38,10 +38,11 @@ const insertDetails = async (req, res) => {
           phone: data.phone,
           address: data.address
         },
-        contacts: [
-          { name: data.contacts[0].name, phoneNumber: data.contacts[0].phoneNumber },
-          { name: data.contacts[1].name, phoneNumber: data.contacts[1].phoneNumber }
-        ]
+        contacts: JSON.stringify(data.contacts) 
+        // contacts: [
+        //   { name: data.contacts[0].name, phoneNumber: data.contacts[0].phoneNumber },
+        //   { name: data.contacts[1].name, phoneNumber: data.contacts[1].phoneNumber }
+        // ]
       };
     }
 
