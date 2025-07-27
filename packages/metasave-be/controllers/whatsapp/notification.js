@@ -11,8 +11,8 @@ const s = strings(helia)
 
 const whatsappNotification = async(req, res) => {
     try {
-        const hash = 'baguqeeracmxas7kkrjpestxdqihmqwklvm73vi53e6hudx2hvniwagubxp5q'
-        // const hash = req.body.hash
+        //const hash = 'baguqeeracmxas7kkrjpestxdqihmqwklvm73vi53e6hudx2hvniwagubxp5q'
+        const hash = req.body.hash
 
 
         //fetch userDetails from IPFS
